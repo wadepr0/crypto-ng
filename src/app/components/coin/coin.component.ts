@@ -8,6 +8,8 @@ import { ICoin } from 'src/app/types/ICoin';
 })
 export class CoinComponent implements OnInit {
   @Input() coin!: ICoin;
+  @Input() currency!: string;
+
   constructor() { }
 
   ngOnInit(): void {

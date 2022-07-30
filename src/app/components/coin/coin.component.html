@@ -1,1 +1,9 @@
-<p>{{coin.name}}</p>
+<div class="coin">
+  <img [src]="coin.image.large" alt="coin-logo" class="coin_logo">
+  <p>{{coin.name}}</p>
+  <div [ngSwitch]="currency">
+    <div class="coin_price" *ngSwitchCase="'rub'">{{coin.market_data.current_price.rub}} ₽</div>
+    <div class="coin_price" *ngSwitchCase="'eur'">{{coin.market_data.current_price.eur}} €</div>
+    <div class="coin_price" *ngSwitchCase="'usd'">{{coin.market_data.current_price.usd}} $</div>
+  </div>
+</div>
