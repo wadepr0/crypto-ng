@@ -1,1 +1,14 @@
-<p>nav-bar works!</p>
+<div class="nav_bar">
+  <ul class="nav_buttons">
+    <li routerLink="/"><img src="../../../assets/2048px-Angular_full_color_logo.svg.png" alt=""></li>
+    <li routerLink="/cryptocurrencies">Cryptocurrencies</li>
+    <li routerLink="/exchanges">Exchanges</li>
+    <li routerLink="/watchlist">Watchlist</li>
+    <li routerLink="/about">About</li>
+  </ul>
+  <ng-select class="nav_bar_search" [clearable]="false" [virtualScroll]="true" [searchable]="true" placeholder="Search cryptos">
+    <ng-option *ngFor="let coin of allCoins; trackBy:trackByFn" [value]="coin.id">
+      {{coin.name}}
+    </ng-option>
+  </ng-select>
+</div>
