@@ -1,18 +1,20 @@
 .coin {
-  border: 1px solid white;
+  border-radius: 16px;
   padding: 20px;
-  margin-bottom: 10px;
-  box-shadow: 4px 4px 8px 0px rgba(255, 255, 255, 0.568);
+  margin-bottom: 15px;
+  background-color: rgb(16 23 36);
   display: flex;
   align-items: center;
-    justify-content: space-between;
+  justify-content: space-between;
 
   .coin_logo {
     width: 50px;
     padding-right: 10px;
   }
 
-  p, .coin_price {
+  p,
+  .coin_price {
+    text-transform: uppercase;
     font-size: 22px;
     color: white;
     padding: 0 10px;

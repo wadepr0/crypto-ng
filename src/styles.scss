@@ -1,1 +1,57 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap');
+@import "~@ng-select/ng-select/themes/ant.design.theme.css";
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: rgba(0, 0, 0, 1);
+}
+
+.ng-select.custom {
+  min-height: 30px;
+
+  .ng-select-container {
+    min-height: 30px;
+    border-radius: 0;
+    background-color: rgb(0, 0, 0);
+    border: rgb(0, 0, 0);
+    border-radius: 4px;
+  }
+
+  .ng-value {
+    color: rgb(198, 211, 231) !important;
+    font-weight: 700;
+  }
+
+  .ng-arrow {
+    width: 5px !important;
+    height: 5px !important;
+    color: rgb(198, 211, 231) !important;
+  }
+
+  .ng-dropdown-panel {
+    width: 75px;
+  }
+
+  .ng-option {
+    background-color: rgb(0, 0, 0);
+    border: rgb(0, 0, 0);
+    color: white;
+
+    &-marked {
+      background-color: rgb(0, 0, 0);
+      border: rgb(0, 0, 0);
+      color: rgb(0, 0, 0);
+    }
+
+    &-selected {
+      font-weight: 900;
+      color: black;
+    }
+  }
+}

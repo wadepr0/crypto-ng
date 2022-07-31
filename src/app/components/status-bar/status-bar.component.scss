@@ -1,0 +1,25 @@
+.status_bar {
+  width: 100%;
+  background-color: rgb(16 23 36);
+  height: 40px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+ng-select, .ng-select {
+  width: 100px;
+  padding-right: 25px;
+  height: 28px;
+ 
+}
+
+
+
+// .status_select {
+//   text-transform: uppercase;
+// }
+
+// .status_option {
+//   text-transform: uppercase;
+// }
