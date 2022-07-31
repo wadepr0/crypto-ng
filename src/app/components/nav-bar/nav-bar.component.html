@@ -7,7 +7,7 @@
     <li routerLink="/about">About</li>
   </ul>
   <ng-select class="nav_bar_search" [clearable]="false" [virtualScroll]="true" [searchable]="true" placeholder="Search cryptos">
-    <ng-option *ngFor="let coin of allCoins; trackBy:trackByFn" [value]="coin.id">
+    <ng-option *ngFor="let coin of allCoins" [value]="coin.id">
       {{coin.name}}
     </ng-option>
   </ng-select>

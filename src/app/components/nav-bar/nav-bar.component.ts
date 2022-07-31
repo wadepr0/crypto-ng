@@ -30,8 +30,4 @@ export class NavBarComponent implements OnInit {
       })
   }
 
-  trackByFn(index: any, item: any) {
-    return item.id; // or item.id
-  }
-
 }
