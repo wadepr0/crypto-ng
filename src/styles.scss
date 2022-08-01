@@ -55,3 +55,56 @@ body {
     }
   }
 }
+
+.ng-select.nav_bar_search {
+  margin-right: 25px;
+  min-height: 30px;
+  min-width: 200px;
+
+  .ng-select-container {
+    min-height: 30px;
+    border-radius: 0;
+    background-color: rgb(16, 23, 36);
+    border: rgb(0, 0, 0);
+    border-radius: 4px;
+  }
+
+  .ng-value {
+    color: rgb(198, 211, 231) !important;
+    font-weight: 700;
+  }
+
+  .ng-arrow {
+    width: 5px !important;
+    height: 5px !important;
+    color: rgb(198, 211, 231) !important;
+  }
+
+  .ng-dropdown-panel {
+    width: 200px;
+  }
+
+  .ng-option {
+    background-color: rgb(16, 23, 36);
+    border: rgb(16, 23, 36);
+    color: white;
+
+    &-marked {
+      background-color: rgb(16, 23, 36);
+      border: rgb(16, 23, 36);
+      color: rgb(16, 23, 36);
+    }
+
+    &-selected {
+      font-weight: 900;
+      color: black;
+    }
+  }
+
+  .ng-input {
+    input {
+      color: white !important;
+      font-size: 16px;
+    }
+  }
+}

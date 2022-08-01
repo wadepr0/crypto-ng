@@ -11,13 +11,15 @@ import { StatusBarComponent } from './components/status-bar/status-bar.component
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { MainPageComponent } from './components/main-page/main-page.component';
 @NgModule({
   declarations: [
     AppComponent,
     CoinComponent,
     LoaderComponent,
     StatusBarComponent,
-    NavBarComponent
+    NavBarComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,
