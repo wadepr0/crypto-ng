@@ -10,8 +10,8 @@ import { LoaderComponent } from './components/loader/loader.component';
 import { StatusBarComponent } from './components/status-bar/status-bar.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgSelectModule } from '@ng-select/ng-select';
 import { MainPageComponent } from './components/main-page/main-page.component';
+import { DropdownModule } from 'primeng/dropdown';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +27,7 @@ import { MainPageComponent } from './components/main-page/main-page.component';
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-    NgSelectModule,
+    DropdownModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
