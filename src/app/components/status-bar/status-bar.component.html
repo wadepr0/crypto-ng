@@ -1,15 +1,3 @@
 <div class="status_bar">
-  <!-- <ng-select class="custom" [clearable]="false" [searchable]="false" [(ngModel)]="value"
-    (ngModelChange)="setCurrency()">
-    <ng-option value="rub">
-      RUB
-    </ng-option>
-    <ng-option value="eur">
-      EUR
-    </ng-option>
-    <ng-option value="usd">
-      USD
-    </ng-option>
-  </ng-select> -->
   <p-dropdown [options]="currencies" [(ngModel)]="value" (ngModelChange)="setCurrency()" optionLabel="name"></p-dropdown>
 </div>

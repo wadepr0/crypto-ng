@@ -6,9 +6,11 @@
     <li routerLink="/watchlist">Watchlist</li>
     <li routerLink="/about">About</li>
   </ul>
-  <!-- <ng-select class="nav_bar_search" [clearable]="false" [virtualScroll]="true" [searchable]="true" placeholder="Search cryptos">
-    <ng-option *ngFor="let coin of allCoins" [value]="coin.id">
-      {{coin.name}}
-    </ng-option>
-  </ng-select> -->
+  <p-dropdown 
+  [placeholder]="'Search cryptos'"
+  [options]="allCoins!" 
+  [virtualScroll]="true" 
+  [virtualScrollItemSize]="30" 
+
+  optionLabel="name"></p-dropdown>
 </div>

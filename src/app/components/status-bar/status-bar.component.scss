@@ -5,21 +5,14 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  padding: 0 25px;
 }
 
-ng-select, .ng-select {
+:host ::ng-deep .p-dropdown {
   width: 100px;
-  padding-right: 25px;
-  height: 28px;
- 
+  
 }
 
-
-
-// .status_select {
-//   text-transform: uppercase;
-// }
-
-// .status_option {
-//   text-transform: uppercase;
-// }
+:host ::ng-deep .p-dropdown-label {
+  padding: 2px 12px;
+}

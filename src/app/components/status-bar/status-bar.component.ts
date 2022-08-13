@@ -1,6 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-
-
+import { Currency, currency } from '../constants/currency';
 @Component({
   selector: 'app-status-bar',
   templateUrl: './status-bar.component.html',
@@ -9,23 +8,19 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class StatusBarComponent implements OnInit {
   @Output() currency: EventEmitter<string>
 
-  value: string = 'rub'
-  currencies: any[] = []
+  value: Currency = {
+    name: 'USD',
+    code: 'usd'
+  }
+  currencies: Currency[] = currency
   constructor() {
     this.currency = new EventEmitter<string>()
-    this.currencies = [
-      {name: 'New York', code: 'NY'},
-      {name: 'Rome', code: 'RM'},
-      {name: 'London', code: 'LDN'},
-      {name: 'Istanbul', code: 'IST'},
-      {name: 'Paris', code: 'PRS'}
-  ];
   }
 
   setCurrency(): void {
-    this.currency.emit(this.value)
+    this.currency.emit(this.value.code)
   }
-  
+
   ngOnInit(): void {
   }
 

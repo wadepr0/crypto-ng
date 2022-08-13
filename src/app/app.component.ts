@@ -13,7 +13,7 @@ import { ICoin } from './types/ICoin';
 export class AppComponent implements OnInit {
   coins: ICoin[] | null = null;
   loading: boolean = false;
-  currency: string = 'rub';
+  currency: string = 'usd';
 
   constructor(private httpService$: HttpService) { }
 
