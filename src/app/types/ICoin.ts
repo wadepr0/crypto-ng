@@ -34,9 +34,19 @@ export interface ICoin {
             usd: number;
             eur: number;
         }
+        price_change_percentage_1h_in_currency: {
+            rub: number;
+            usd: number;
+            eur: number;
+        }
         market_cap_rank: number;
         price_change_24h: number
         price_change_24h_in_currency: {
+            rub: number;
+            usd: number;
+            eur: number;
+        }
+        price_change_percentage_7d_in_currency: {
             rub: number;
             usd: number;
             eur: number;

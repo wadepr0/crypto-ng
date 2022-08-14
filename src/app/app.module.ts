@@ -12,6 +12,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { DropdownModule } from 'primeng/dropdown';
+import { TableModule } from 'primeng/table';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +29,7 @@ import { DropdownModule } from 'primeng/dropdown';
     FormsModule,
     BrowserAnimationsModule,
     DropdownModule,
+    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
