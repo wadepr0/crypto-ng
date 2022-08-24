@@ -1,4 +1,5 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { HttpService } from 'src/app/services/http.service';
 import { Currency, currency } from '../constants/currency';
 @Component({
   selector: 'app-status-bar',
@@ -6,22 +7,23 @@ import { Currency, currency } from '../constants/currency';
   styleUrls: ['./status-bar.component.scss']
 })
 export class StatusBarComponent implements OnInit {
-  @Output() currency: EventEmitter<string>
-
   value: Currency = {
     name: 'USD',
     code: 'usd'
   }
   currencies: Currency[] = currency
-  constructor() {
-    this.currency = new EventEmitter<string>()
-  }
-
-  setCurrency(): void {
-    this.currency.emit(this.value.code)
-  }
+  constructor(
+    private httpService: HttpService
+  ) { }
 
   ngOnInit(): void {
+    this.httpService.currency$.subscribe(value => this.value = value)
   }
+
+  setCurrency(event: { value: Currency }): void {
+    this.httpService.changeCurrency(event.value)
+  }
+
+
 
 }

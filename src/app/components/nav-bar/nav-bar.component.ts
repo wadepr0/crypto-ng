@@ -22,8 +22,8 @@ export class NavBarComponent implements OnInit {
       .pipe(
         delay(500),
         // map((i) => i.filter((i: ICoin) => !i.id.includes('coin'))),
-        tap(i => console.log(i)
-        ))
+        // tap(i => console.log(i))
+        )
       .subscribe(res => {
         this.allCoins = res;
       })

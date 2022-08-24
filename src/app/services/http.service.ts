@@ -1,18 +1,24 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ICoin } from '../types/ICoin';
 import { IMaxCoins } from '../types/IMaxCoins';
 import { IRegisteredCoins } from '../types/IRegisteredCoins';
+import { Currency } from '../components/constants/currency';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class HttpService {
+  currency$: BehaviorSubject<Currency> = new BehaviorSubject({
+    name: 'USD',
+    code: 'usd'
+  });
   constructor(
     private http: HttpClient
   ) { }
+
 
 
   getCoins(): Observable<ICoin[]> {
@@ -29,5 +35,9 @@ export class HttpService {
 
   getAllRegisteredCoins(): Observable<IRegisteredCoins[]> {
     return this.http.get<IRegisteredCoins[]>('https://api.coingecko.com/api/v3/coins/list', { responseType: 'json' })
+  }
+
+  changeCurrency(currency: Currency) {
+    this.currency$.next(currency);
   }
 }

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { delay, tap } from 'rxjs';
+import { HttpService } from 'src/app/services/http.service';
+import { ICoin } from 'src/app/types/ICoin';
+import { Currency } from '../constants/currency';
 
 @Component({
   selector: 'app-main-page',
@@ -6,10 +10,39 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-page.component.scss']
 })
 export class MainPageComponent implements OnInit {
+  coins: ICoin[] | null = null;
+  loading: boolean = false;
+  currency: Currency = { name: 'USD', code: 'usd' };
 
-  constructor() { }
+  constructor(private httpService: HttpService) {
 
-  ngOnInit(): void {
   }
+
+  ngOnInit() {
+    this.loadCoins();
+    this.httpService.currency$.subscribe(data => {
+      this.currency = data
+    })
+  }
+
+  loadCoins() {
+    this.loading = true;
+    this.httpService.getCoins()
+      .pipe(
+        delay(500),
+        // map((i) => i.filter((i: ICoin) => !i.id.includes('coin'))),
+        // tap(i => console.log(i))
+      )
+      .subscribe(res => {
+        this.coins = res
+        this.loading = false;
+      })
+  }
+
+
+  // setCurrency(value: string) {
+  //   this.currency = value
+  //   this.httpService$.changeCurrency(value)
+  // }
 
 }
