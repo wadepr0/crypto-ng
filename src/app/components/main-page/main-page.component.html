@@ -51,7 +51,7 @@
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-coin>
-        <tr class="p-selectable-row">
+        <tr class="p-selectable-row" (click)="onRowClick(coin)">
           <td>
             <p-tableCheckbox [value]="coin"></p-tableCheckbox>
           </td>

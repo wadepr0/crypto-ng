@@ -1,11 +1,7 @@
-<!-- <div class="coin">
-  <div style="display: flex; align-items: center;">
-    <img [src]="coin.image.large" alt="coin-logo" class="coin_logo">
-    <p>{{coin.name}}</p>
+<h1 *ngIf="loading; else loader">loading</h1>
+<ng-template #loader>
+  <div class="coin" >
+    <h1 style="color: white">{{coin.id}}</h1>
+    <img [src]="coin.image?.small" alt="coin_logo">
   </div>
-  <div [ngSwitch]="currency">
-    <div class="coin_price" *ngSwitchCase="'rub'">{{coin.market_data.current_price.rub}} ₽</div>
-    <div class="coin_price" *ngSwitchCase="'eur'">{{coin.market_data.current_price.eur}} €</div>
-    <div class="coin_price" *ngSwitchCase="'usd'">{{coin.market_data.current_price.usd}} $</div>
-  </div>
-</div> -->
+</ng-template>

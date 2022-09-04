@@ -11,6 +11,7 @@
   [options]="allCoins!" 
   [virtualScroll]="true" 
   [virtualScrollItemSize]="30" 
-
+  (onChange)="onSelect($event)"
+  [filter]="true"
   optionLabel="name"></p-dropdown>
 </div>

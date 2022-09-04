@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { delay, tap } from 'rxjs';
 import { HttpService } from 'src/app/services/http.service';
 import { ICoin } from 'src/app/types/ICoin';
@@ -14,7 +15,10 @@ export class MainPageComponent implements OnInit {
   loading: boolean = false;
   currency: Currency = { name: 'USD', code: 'usd' };
 
-  constructor(private httpService: HttpService) {
+  constructor(
+    private httpService: HttpService,
+    private router: Router
+    ) {
 
   }
 
@@ -39,10 +43,8 @@ export class MainPageComponent implements OnInit {
       })
   }
 
-
-  // setCurrency(value: string) {
-  //   this.currency = value
-  //   this.httpService$.changeCurrency(value)
-  // }
+  onRowClick(data: ICoin) {
+    this.router.navigate(['/coin', data.id])
+  }
 
 }

@@ -5,6 +5,7 @@ import { ICoin } from '../types/ICoin';
 import { IMaxCoins } from '../types/IMaxCoins';
 import { IRegisteredCoins } from '../types/IRegisteredCoins';
 import { Currency } from '../components/constants/currency';
+import { ICoinDetails } from '../types/ICoinDetails';
 
 @Injectable({
   providedIn: 'root'
@@ -26,7 +27,6 @@ export class HttpService {
       'Content-Type': 'accept: application/json'
     })
     return this.http.get<ICoin[]>('https://api.coingecko.com/api/v3/coins', { responseType: 'json' })
-
   }
 
   getMoreCoins(currency: string): Observable<IMaxCoins[]> {
@@ -37,6 +37,10 @@ export class HttpService {
     return this.http.get<IRegisteredCoins[]>('https://api.coingecko.com/api/v3/coins/list', { responseType: 'json' })
   }
 
+  getCoinDetails(coinId: string): Observable<ICoinDetails> {
+    return this.http.get<ICoinDetails>(`https://api.coingecko.com/api/v3/coins/${coinId}`, { responseType: 'json' })
+  }
+ 
   changeCurrency(currency: Currency) {
     this.currency$.next(currency);
   }
