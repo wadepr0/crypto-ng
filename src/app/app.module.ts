@@ -13,6 +13,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { DropdownModule } from 'primeng/dropdown';
 import { TableModule } from 'primeng/table';
+import { ToastModule } from 'primeng/toast';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +30,8 @@ import { TableModule } from 'primeng/table';
     FormsModule,
     BrowserAnimationsModule,
     DropdownModule,
-    TableModule
+    TableModule,
+    ToastModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
